@@ -1,0 +1,5 @@
+---
+description: Reglas del proyecto boutique (Desarrollo Guiado por Especificaciones)
+alwaysApply: true
+---
+Antes de cualquier cambio lee `AGENTS.md` y `specs/constitution.md`, y sigue lo que dicen. Si algo pedido contradice una spec, detente y avisa. No implementes nada que no esté en `specs/`.

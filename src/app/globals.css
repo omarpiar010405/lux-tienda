@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/* Tailwind 4 pinta los bordes con el color del texto; esto restaura el gris suave de siempre
+   (las clases con color propio, como border-oro, siguen mandando). */
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: #e5e5e5;
+  }
+}
+
+/* Identidad de marca: negro, blanco (marfil) y dorado. Cambia aquí los colores y la tipografía. */
+@theme {
+  --color-negro: #0b0b0b;
+  --color-carbon: #1a1917;
+  --color-marfil: #faf8f4;
+  --color-oro: #c8a24a;
+  --color-oro-claro: #e8d5a3;
+  --color-oro-oscuro: #8a6a1e;
+  --font-display: "Didot", "Bodoni MT", "Playfair Display", "Cormorant Garamond", Georgia, "Times New Roman", serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  background: #fafafa;
+  color: #171717;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Foco visible y consistente (accesibilidad) */
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 2px solid var(--color-oro);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  .no-imprimir {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+  }
+}
